@@ -3,7 +3,7 @@
   <fieldset>
     <legend>Start a new party room</legend>
     <%= form_for(@new_room) do |f| %>
-      Party Name: <%= f.text_field :name %><br/><br/>
+      Room Name: <%= f.text_field :name %><br/><br/>
       <%= f.submit %>
     <% end %>
   </fieldset>
@@ -19,7 +19,7 @@
 
     <% @rooms.each do |room| %>
       <tr>
-        <td align="center" width="300px"><%= link_to room.name, rooms_path(room) %> </td>
+        <td align="center" width="300px"><%= link_to "Room", room_path(room) %> </td>
         <td><%= room.created_at %></td>
       </tr>
     <% end %>
