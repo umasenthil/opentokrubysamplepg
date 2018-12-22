@@ -13,7 +13,7 @@ class RoomsController < ApplicationController
     	@new_room.session_id = session.session_id
     	respond_to do |format|
           if @new_room.save
-      	    format.html { redirect_to("/rooms/" + @new_room.id) }
+      	    format.html { redirect_to '/rooms/#{@new_room.id}'}
           #redirect_to rooms_party_path
           else
             format.html { render :controller => 'rooms', :action => "index" }
@@ -30,6 +30,6 @@ class RoomsController < ApplicationController
   
     private
     def room_params
-      params.require(:room).permit(:name, :session_id)
+      params.require(:room).permit(:id, :name, :session_id)
     end
 end

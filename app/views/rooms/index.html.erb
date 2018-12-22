@@ -19,7 +19,7 @@
 
     <% @rooms.each do |room| %>
       <tr>
-        <td align="center" width="300px"><%= link_to "Room", room_path(room) %> </td>
+        <td align="center" width="300px"><%= link_to room.name, room_path(room) %> </td>
         <td><%= room.created_at %></td>
       </tr>
     <% end %>
